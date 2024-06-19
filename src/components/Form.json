@@ -1,0 +1,78 @@
+[
+    {
+        "type": "textInput",
+        "name": "Фамилия",
+        "label": "Фамилия",
+        "placeholder": "Иванов",
+        "required": true
+    },
+    {
+        "type": "textInput",
+        "name": "Имя",
+        "label": "Имя",
+        "placeholder": "Иван",
+        "required": true
+    },
+    {
+        "type": "textInput",
+        "name": "Отчество",
+        "label": "Отчество",
+        "placeholder": "Иванович",
+        "required": false
+    },
+    {
+        "type": "selectInput",
+        "name": "Пол",
+        "label": "Пол",
+        "placeholder": "Пол",
+        "required": true,
+        "options": [
+            {
+                "value": "male",
+                "label": "Мужской"
+            },
+            {
+                "value": "female",
+                "label": "Женский"
+            }
+        ]
+    },
+    {
+        "type": "switchInput",
+        "name": "ОтобразитьКомментарий",
+        "label": "Отобразить комментарий",
+        "required": false
+    },
+    {
+        "type": "textInput",
+        "name": "Комментарий",
+        "label": "Комментарий",
+        "placeholder": "Произвольный текст",
+        "required": false,
+        "depend": {
+            "field": "ОтобразитьКомментарий",
+            "value": true
+        }
+    },
+    {
+        "type": "textInput",
+        "name": "Возраст",
+        "label": "Возраст",
+        "placeholder": "Сколько лет",
+        "required": true,
+        "depend": {
+            "field": "Пол",
+            "value": "male"
+        }
+    },
+    {
+        "type": "sliderInput",
+        "name": "Мощность",
+        "label": "Мощность",
+        "placeholder": "Мощность",
+        "required": true,
+        "min": 0,
+        "max": 15,
+        "step": 0.1
+    }
+]
