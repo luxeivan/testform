@@ -88,5 +88,24 @@
         "min": 0,
         "max": 15,
         "step": 0.1
+    },
+    {
+        "type": "divider",
+        "label": "Координаты объекта"
+    },
+    {
+        "type": "сoordinateInput",
+        "name": "Координаты объекта",
+        "label": "Координаты объекта",
+        "placeholder": "Координаты объекта",
+        "required": false
+    },
+    {
+        "type": "autoCompleteInput",
+        "bound":"city",
+        "name": "Регистрация город",
+        "label": "Город",
+        "placeholder": "Балашиха",
+        "required": false
     }
 ]
