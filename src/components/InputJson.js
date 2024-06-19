@@ -44,7 +44,7 @@ export default function InputJson() {
     }
     return (
         <div>
-            <Typography.Title level={3} style={{ textAlign: "center" }}>Ввод JSON для формы <Button onClick={clear}>Сбросить</Button></Typography.Title>
+            <Typography.Title level={3} style={{ textAlign: "center" }}>Ввод JSON для формы <Button type='primary' danger onClick={clear}>Сбросить</Button></Typography.Title>
             <TextArea rows={4} autoSize={{ minRows: 6 }} onChange={handlerChange} value={value} style={err && { border: "1px solid red", backgroundColor: "rgba(255,0,0,0.1)" }} />
         </div>
     )

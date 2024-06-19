@@ -73,6 +73,9 @@ const FormMain = () => {
             <Button onClick={() => { form.setFieldsValue({ Фамилия: "Петров", Имя: "Петр", Отчество: "Петрович", Пол: "male" }) }}>
               Заполнить
             </Button>
+            <Button danger onClick={() => { form.resetFields() }}>
+              Очистить
+            </Button>
           </Space>
         </Form.Item>
       </Form>
