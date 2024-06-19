@@ -28,25 +28,28 @@ export default function SliderInput({ name = 'name', label = 'Label', disabled =
                 <InputNumber
                     min={min}
                     max={max}
-                    style={{ margin: '0 16px' }}
                     step={step}
                     value={inputValue}
                     onChange={onChange}
                     disabled={disabled}
                 />
             </Form.Item>
-            <Col span={8}>
-                <Slider
-                    min={min}
-                    max={max}
-                    onChange={onChange}
-                    value={typeof inputValue === 'number' ? inputValue : 0}
-                    step={step}
-                    disabled={disabled}
-                />
-            </Col>
-            <Col span={4}>
-            </Col>
+            <Row>
+                <Col span={4}>
+                </Col>
+                <Col span={12}>
+
+                    <Slider
+                        min={min}
+                        max={max}
+                        onChange={onChange}
+                        value={typeof inputValue === 'number' ? inputValue : 0}
+                        step={step}
+                        disabled={disabled}
+                    />
+                </Col>
+            </Row>
+
         </>
     )
 }

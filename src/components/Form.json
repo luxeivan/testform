@@ -1,5 +1,9 @@
 [
     {
+        "type": "divider",
+        "label": "ФИО"
+    },
+    {
         "type": "textInput",
         "name": "Фамилия",
         "label": "Фамилия",
@@ -38,6 +42,21 @@
         ]
     },
     {
+        "type": "textInput",
+        "name": "Возраст",
+        "label": "Возраст",
+        "placeholder": "Сколько лет",
+        "required": true,
+        "depend": {
+            "field": "Пол",
+            "value": "male"
+        }
+    },
+    {
+        "type": "divider",
+        "label": "Комментарии"
+    },
+    {
         "type": "switchInput",
         "name": "ОтобразитьКомментарий",
         "label": "Отобразить комментарий",
@@ -55,22 +74,15 @@
         }
     },
     {
-        "type": "textInput",
-        "name": "Возраст",
-        "label": "Возраст",
-        "placeholder": "Сколько лет",
-        "required": true,
-        "depend": {
-            "field": "Пол",
-            "value": "male"
-        }
+        "type": "divider",
+        "label": "Мощность"
     },
     {
         "type": "sliderInput",
         "name": "Мощность",
         "label": "Мощность",
         "placeholder": "Мощность",
-        "required": true,
+        "required": false,
         "min": 0,
         "max": 15,
         "step": 0.1
