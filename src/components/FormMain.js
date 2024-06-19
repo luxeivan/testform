@@ -15,13 +15,13 @@ const FormMain = () => {
   const formJson = useStore(state=>state.json)
   const [form] = Form.useForm();
   const onFinish = (event) => {
-    message.success('Submit success!');
+    message.success('JSON вывелся в консоль');
     console.log(event)
-    form.resetFields()
+    // form.resetFields()
   };
 
   const onFinishFailed = () => {
-    message.error('Submit failed!');
+    message.error('Ошибка отправки формы');
   };
   return (
     <>
