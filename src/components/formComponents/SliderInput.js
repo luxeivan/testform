@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form, Input, InputNumber, message, Space, Col, Row, Slider } from 'antd';
 
-export default function SliderInput({ name = 'name', label = 'Label', disabled = false, placeholder = 'placeholder', required = false, depend = false, min = 0, max = 100, step = 0.1 }) {
+export default function SliderInput({ name = 'name', label = 'Label', disabled = false, placeholder = 'placeholder', required = false, depend = false, min = 0, max = 100, step = 1 }) {
     const form = Form.useFormInstance()
     const fieldDepends = Form.useWatch(depend && depend.field, form)
     const [inputValue, setInputValue] = useState(min);

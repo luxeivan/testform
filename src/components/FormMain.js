@@ -6,6 +6,7 @@ import formJson from './Form.json'
 import SwitchInput from './formComponents/SwitchInput';
 import SliderInput from './formComponents/SliderInput';
 import DividerForm from './formComponents/DividerForm';
+import NumberInput from './formComponents/NumberInput';
 const FormMain = () => {
   const [form] = Form.useForm();
   const onFinish = (event) => {
@@ -34,6 +35,9 @@ const FormMain = () => {
           }
           if (item.type === 'textInput') {
             return <TextInput key={index} {...item} />
+          }
+          if (item.type === 'numberInput') {
+            return <NumberInput key={index} {...item} />
           }
           if (item.type === 'switchInput') {
             return <SwitchInput key={index} {...item} />

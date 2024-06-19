@@ -42,7 +42,7 @@
         ]
     },
     {
-        "type": "textInput",
+        "type": "numberInput",
         "name": "Возраст",
         "label": "Возраст",
         "placeholder": "Сколько лет",
@@ -50,7 +50,9 @@
         "depend": {
             "field": "Пол",
             "value": "male"
-        }
+        },
+        "min": 18,
+        "max": 100
     },
     {
         "type": "divider",
