@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Input, Typography } from 'antd';
 import useStore from '../store/useStore';
+import formJson from '../components/Form.json'
 
 const { TextArea } = Input;
 
@@ -15,7 +16,7 @@ export default function InputJson() {
             // console.log(localStorage.getItem('json'))
             if (localStorage.getItem('json')) {
                 createJson(localStorage.getItem('json'))
-                // setValue(localStorage.getItem('json'))
+                setValue(localStorage.getItem('json'))
             } else {
                 setValue(JSON.stringify(json, undefined, 4))
             }
@@ -23,18 +24,20 @@ export default function InputJson() {
 
         }
     }, [])
-    useEffect(() => {
-        try {
-            setValue(JSON.stringify(json, undefined, 4))
-        } catch (error) {
+    // useEffect(() => {
+    //     try {
+    //         setValue(JSON.stringify(json, undefined, 4))
+    //     } catch (error) {
 
-        }
-    }, [json])
+    //     }
+    // }, [json])
     const clear = () => {
         localStorage.removeItem('json')
         clearJson()
+        setValue(JSON.stringify(formJson, undefined, 4))
     }
     const handlerChange = (event) => {
+        event.preventDefault()
         // console.log(event.target.value)
         createJson(event.target.value)
         setValue(event.target.value)

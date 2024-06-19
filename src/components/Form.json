@@ -101,11 +101,69 @@
         "required": false
     },
     {
+        "type": "divider",
+        "label": "Адрес регистрации"
+    },
+    {
         "type": "autoCompleteInput",
-        "bound":"city",
+        "bound": "region",
+        "name": "Регистрация регион",
+        "label": "Регион/Область",
+        "placeholder": "Балашинский",
+        "required": false
+    },
+    {
+        "type": "autoCompleteInput",
+        "bound": "city",
+        "locations": [
+            {
+                "type": "region",
+                "field": "Регистрация регион"
+            }
+        ],
         "name": "Регистрация город",
         "label": "Город",
         "placeholder": "Балашиха",
+        "required": false
+    },
+    {
+        "type": "autoCompleteInput",
+        "bound": "street",
+        "locations": [
+            {
+                "type": "region",
+                "field": "Регистрация регион"
+            },
+            {
+                "type": "city",
+                "field": "Регистрация город"
+            }
+        ],
+        "name": "Регистрация улица",
+        "label": "Улица",
+        "placeholder": "Балашиха",
+        "required": false
+    },
+    {
+        "type": "autoCompleteInput",
+        "bound": "house",
+        "locations": [
+            {
+                "type": "region",
+                "field": "Регистрация регион"
+            },
+            {
+                "type": "city",
+                "field": "Регистрация город"
+            },
+            {
+                "type": "street",
+                "field": "Регистрация улица"
+            }
+        ],
+        "name": "Регистрация дом",
+        "label": "Дом",
+        "placeholder": "10",
         "required": false
     }
 ]
