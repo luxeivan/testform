@@ -36,7 +36,7 @@ export default function AddressInput({ name = 'name', label = 'Label', disabled 
                 locations: locationTemp
             })
         }
-console.log(optionsPost.body)
+// console.log(optionsPost.body)
         fetch(url, optionsPost)
             .then(response => response.json())
             .then(result => {

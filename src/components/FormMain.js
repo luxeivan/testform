@@ -58,7 +58,7 @@ const FormMain = () => {
           if (item.type === 'сoordinateInput') {
             return <CoordinateInput key={index} {...item} />
           }
-          if (item.type === 'autoCompleteInput') {
+          if (item.type === 'addressInput') {
             return <AddressInput key={index} {...item} />
           }
 

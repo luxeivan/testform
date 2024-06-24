@@ -4,9 +4,11 @@ import styles from './App.module.css'
 import FormMain from './components/FormMain';
 import { Flex } from 'antd';
 import InputJson from './components/InputJson';
+import FormOneC from './components/FormOneC';
 
 function App() {
   return (
+    <>
     <Flex className={styles.container} >
       <div className={styles.col}>
         <FormMain />
@@ -15,6 +17,10 @@ function App() {
         <InputJson/>
       </div>
     </Flex>
+    <div>
+<FormOneC/>
+    </div>
+    </>
   );
 }
 

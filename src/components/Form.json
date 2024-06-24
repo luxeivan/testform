@@ -105,7 +105,7 @@
         "label": "Адрес регистрации"
     },
     {
-        "type": "autoCompleteInput",
+        "type": "addressInput",
         "bound": "region",
         "name": "Регистрация регион",
         "label": "Регион/Область",
@@ -113,7 +113,7 @@
         "required": false
     },
     {
-        "type": "autoCompleteInput",
+        "type": "addressInput",
         "bound": "city",
         "locations": [
             {
@@ -127,7 +127,7 @@
         "required": false
     },
     {
-        "type": "autoCompleteInput",
+        "type": "addressInput",
         "bound": "street",
         "locations": [
             {
@@ -145,7 +145,7 @@
         "required": false
     },
     {
-        "type": "autoCompleteInput",
+        "type": "addressInput",
         "bound": "house",
         "locations": [
             {
