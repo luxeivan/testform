@@ -9,10 +9,11 @@ import NumberInput from './formComponents/NumberInput';
 import CoordinateInput from './formComponents/CoordinateInput';
 import AddressInput from './formComponents/adressComponents/AddressInput';
 import useStore from '../store/useStore';
+import Wrapper from './Wrapper';
 // import formJson from './Form.json'
 
 const FormMain = () => {
-  const formJson = useStore(state=>state.json)
+  const formJson = useStore(state => state.json)
   const [form] = Form.useForm();
   const onFinish = (event) => {
     message.success('JSON вывелся в консоль');
@@ -25,7 +26,7 @@ const FormMain = () => {
   };
   return (
     <>
-        <Typography.Title level={3} style={{textAlign:"center"}}>Наивысшая форма</Typography.Title>
+      <Typography.Title level={3} style={{ textAlign: "center" }}>Наивысшая форма</Typography.Title>
       <Form
         style={{ border: "1px solid lightgray", padding: "20px", borderRadius: "10px" }}
         labelCol={{ span: 4 }}
@@ -36,24 +37,24 @@ const FormMain = () => {
         labelAlign="right"
         labelWrap
       >
-        {Array.isArray(formJson)&&formJson.map((item, index) => {
+        {Array.isArray(formJson) && formJson.map((item, index) => {
           if (item.type === 'divider') {
-            return <DividerForm key={index} {...item} />
+            return <DividerForm {...item} />
           }
           if (item.type === 'textInput') {
-            return <TextInput key={index} {...item} />
+            return <TextInput {...item} />
           }
           if (item.type === 'numberInput') {
-            return <NumberInput key={index} {...item} />
+            return <NumberInput {...item} />
           }
           if (item.type === 'switchInput') {
             return <SwitchInput key={index} {...item} />
           }
           if (item.type === 'selectInput') {
-            return <SelectInput key={index} {...item} />
+            return <SelectInput {...item} />
           }
           if (item.type === 'sliderInput') {
-            return <SliderInput key={index} {...item} />
+            return <SliderInput  {...item} />
           }
           if (item.type === 'сoordinateInput') {
             return <CoordinateInput key={index} {...item} />

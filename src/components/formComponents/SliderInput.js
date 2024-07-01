@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, Input, InputNumber, message, Space, Col, Row, Slider } from 'antd';
 
 export default function SliderInput({ name = 'name', label = 'Label', disabled = false, placeholder = 'placeholder', required = false, depend = false, min = 0, max = 100, step = 1 }) {
     const form = Form.useFormInstance()
     const fieldDepends = Form.useWatch(depend && depend.field, form)
-    const [inputValue, setInputValue] = useState(min);
+    const [inputValue, setInputValue] = useState(min); 
     const onChange = (value) => {
         form.setFieldValue(name, value)
         if (isNaN(value)) {
@@ -12,7 +12,7 @@ export default function SliderInput({ name = 'name', label = 'Label', disabled =
         }
         setInputValue(value);
     };
-    return (
+    const formItem =
         <>
             <Form.Item
                 name={name}
@@ -38,7 +38,6 @@ export default function SliderInput({ name = 'name', label = 'Label', disabled =
                 <Col span={4}>
                 </Col>
                 <Col span={12}>
-
                     <Slider
                         min={min}
                         max={max}
@@ -49,7 +48,14 @@ export default function SliderInput({ name = 'name', label = 'Label', disabled =
                     />
                 </Col>
             </Row>
-
         </>
-    )
+    if (!depend) {
+        return formItem
+    }
+    if (depend.value && depend.value == fieldDepends) {
+        return formItem
+    }
+    if (depend.min !== false && Number(fieldDepends) >= depend.min && Number(fieldDepends) <= depend.max) {
+        return formItem
+    }
 }

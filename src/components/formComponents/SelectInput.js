@@ -1,19 +1,21 @@
 import React from 'react'
 import { Button, Form, Input, InputNumber, message, Space, Select } from 'antd';
 
-export default function SelectInput({ name = 'name', label = 'Label', disabled = false, placeholder = 'placeholder', required = false, options = [], depend = false }) {
+export default function SelectInput({ name = 'name', label = 'Label', disabled = false, hidden = false, placeholder = 'placeholder', required = false, options = [], depend = false }) {
     const form = Form.useFormInstance();
     const fieldDepends = Form.useWatch(depend && depend.field, form);
-    return (
+    // form.setFieldValue(name, '')
+    const formItem =
         <Form.Item
             name={name}
             label={label}
-            rules={!(depend && !(depend.value == fieldDepends)) && [
+            rules={[
                 {
                     required: required,
                     message: 'Это поле обязательное'
                 }
             ]}
+            hidden={false}
         >
             <Select
                 style={{ width: 120 }}
@@ -21,5 +23,13 @@ export default function SelectInput({ name = 'name', label = 'Label', disabled =
                 disabled={disabled}
             />
         </Form.Item>
-    )
+    if (!depend) {
+        return formItem
+    }
+    if (depend.value && depend.value == fieldDepends) {
+        return formItem
+    }
+    if (depend.min !== false && Number(fieldDepends) >= depend.min && Number(fieldDepends) <= depend.max) {
+        return formItem
+    }
 }
